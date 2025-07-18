@@ -1,0 +1,91 @@
+OtterDataset testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 87484, Total buggy cells: 5333
+True positives: 523, True negatives: 81112, Total correct: 81635
+False positives: 1039, False negatives: 4810, Total incorrect: 5849
+
+===== Cell-aggregated =====
+Precision: 0.3348
+Recall: 0.0981
+F1 Score: 0.1517
+Accuracy: 0.9331
+Buggy Cell Ratio: 0.0610
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.7474
+Recall Score: 0.6898
+F1 Score: 0.7175
+Accuracy Score: 0.8024
+===================================
+
+
+
+CodeParrot GitHub Jupyter dataset (our subset) testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 4769, Total cells: 50001, Total buggy cells: 1972
+True positives: 296, True negatives: 46239, Total correct: 46535
+False positives: 1790, False negatives: 1676, Total incorrect: 3466
+
+===== Cell-aggregated =====
+Precision: 0.1419
+Recall: 0.1501
+F1 Score: 0.1459
+Accuracy: 0.9307
+Buggy Cell Ratio: 0.0394
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.6247
+Recall Score: 0.8950
+F1 Score: 0.7358
+Accuracy Score: 0.6895
+===================================
+
+
+Jupyter Errors dataset testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 9971, Total cells: 191974, Total buggy cells: 11006
+True positives: 721, True negatives: 177132, Total correct: 177853
+False positives: 3836, False negatives: 10285, Total incorrect: 14121
+
+===== Cell-aggregated =====
+Precision: 0.1582
+Recall: 0.0655
+F1 Score: 0.0927
+Accuracy: 0.9264
+Buggy Cell Ratio: 0.0573
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.6153
+Recall Score: 0.4380
+F1 Score: 0.5117
+Accuracy Score: 0.6787
+===================================
+
+
+
+
+OtterDataset testing set results file-level:
+Accuracy : 0.6445
+Precision: 0.6068
+Recall   : 0.7702
+F1 Score : 0.6788
+
+
+CodeParrot GitHub Jupyter dataset (our subset) testing set results file-level:
+Accuracy : 0.5068
+Precision: 0.3129
+Recall   : 0.9386
+F1 Score : 0.4693
+
+
+Jupyter Errors dataset testing set results file-level:
+Accuracy : 0.6941
+Precision: 0.9293
+Recall   : 0.7244
+F1 Score : 0.8142

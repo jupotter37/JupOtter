@@ -1,0 +1,113 @@
+Syntax errors 
+===== Model Evaluation Metrics Totals =====
+Total books: 871, Total cells: 19205, Total buggy cells: 3443
+True positives: 2914, True negatives: 15451, Total correct: 18365
+False positives: 311, False negatives: 529, Total incorrect: 840
+
+===== Cell-aggregated =====
+Precision: 0.9036
+Recall: 0.8464
+F1 Score: 0.8740
+Accuracy: 0.9563
+Buggy Cell Ratio: 0.1793
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.8995
+Recall Score: 0.7904
+F1 Score: 0.8414
+Accuracy Score: 0.9414
+===================================
+
+
+Type errors 
+===== Model Evaluation Metrics Totals =====
+Total books: 86, Total cells: 3211, Total buggy cells: 317
+True positives: 162, True negatives: 2864, Total correct: 3026
+False positives: 30, False negatives: 155, Total incorrect: 185
+
+===== Cell-aggregated =====
+Precision: 0.8438
+Recall: 0.5110
+F1 Score: 0.6365
+Accuracy: 0.9424
+Buggy Cell Ratio: 0.0987
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.8701
+Recall Score: 0.2938
+F1 Score: 0.4393
+Accuracy Score: 0.8770
+===================================
+
+
+Name errors 
+===== Model Evaluation Metrics Totals =====
+Total books: 89, Total cells: 2576, Total buggy cells: 233
+True positives: 54, True negatives: 2314, Total correct: 2368
+False positives: 29, False negatives: 179, Total incorrect: 208
+
+===== Cell-aggregated =====
+Precision: 0.6506
+Recall: 0.2318
+F1 Score: 0.3418
+Accuracy: 0.9193
+Buggy Cell Ratio: 0.0905
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.8101
+Recall Score: 0.1832
+F1 Score: 0.2988
+Accuracy Score: 0.8553
+===================================
+
+
+Value errors
+===== Model Evaluation Metrics Totals =====
+Total books: 64, Total cells: 2009, Total buggy cells: 178
+True positives: 91, True negatives: 1811, Total correct: 1902
+False positives: 20, False negatives: 87, Total incorrect: 107
+
+===== Cell-aggregated =====
+Precision: 0.8198
+Recall: 0.5112
+F1 Score: 0.6298
+Accuracy: 0.9467
+Buggy Cell Ratio: 0.0886
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.8984
+Recall Score: 0.2020
+F1 Score: 0.3298
+Accuracy Score: 0.9225
+===================================
+
+Attribute errors
+===== Model Evaluation Metrics Totals =====
+Total books: 38, Total cells: 1265, Total buggy cells: 108
+True positives: 30, True negatives: 1139, Total correct: 1169
+False positives: 18, False negatives: 78, Total incorrect: 96
+
+===== Cell-aggregated =====
+Precision: 0.6250
+Recall: 0.2778
+F1 Score: 0.3846
+Accuracy: 0.9241
+Buggy Cell Ratio: 0.0854
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.8149
+Recall Score: 0.2398
+F1 Score: 0.3706
+Accuracy Score: 0.9082
+===================================
+

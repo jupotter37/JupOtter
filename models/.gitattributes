@@ -1,0 +1,5 @@
+JupOtter-* filter=lfs diff=lfs merge=lfs -text
+JupOtter* filter=lfs diff=lfs merge=lfs -text
+JupOtter-base_epoch_6.pt filter=lfs diff=lfs merge=lfs -text
+JupOtter-base_epoch_9.pt filter=lfs diff=lfs merge=lfs -text
+JupOtter-small_epoch_10.pt filter=lfs diff=lfs merge=lfs -text

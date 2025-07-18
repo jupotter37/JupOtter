@@ -1,0 +1,273 @@
+---------------------- BASE LINE ----------------------
+Evaluating batches: 100%|██████████| 1029/1029 [08:32<00:00,  2.01batch/s]
+Total 1: 45903, Total 0: 78461
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 3205, True negatives: 73068, Total correct: 76273
+False positives: 42698, False negatives: 5393, Total incorrect: 48091
+Total Precision: 0.0698
+Total Recall: 0.3728
+Total F1 Score: 0.1176
+Total Accuracy: 0.6133
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.6954
+Average Precision Score: 0.1394
+Average Recall Score: 0.6954
+Average F1 Score: 0.2322
+Average Accuracy Score: 0.5889
+===================================
+Starting training
+Epoch 1/10
+Epoch 1 finished. Total Loss: 941.7271. Time: 6616.76 sec
+Validation Loss per batch: 0.1949, Time: 951.88 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:30<00:00,  2.02batch/s]
+Total 1: 49303, Total 0: 199425
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 2825, True negatives: 115191, Total correct: 118016
+False positives: 575, False negatives: 5773, Total incorrect: 6348
+Total Precision: 0.8309
+Total Recall: 0.3286
+Total F1 Score: 0.4709
+Total Accuracy: 0.9490
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.5911
+Average Precision Score: 0.9731
+Average Recall Score: 0.5911
+Average F1 Score: 0.7354
+Average Accuracy Score: 0.9382
+===================================
+Evaluation Time (F1/Recall/Precision): 510.09s time: 510.09 seconds
+Checkpoint saved to model_epoch_1.pt
+Epoch 2/10
+Epoch 2 finished. Total Loss: 700.4489. Time: 6563.46 sec
+Validation Loss per batch: 0.1725, Time: 959.94 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:31<00:00,  2.01batch/s]
+Total 1: 54677, Total 0: 318415
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 4200, True negatives: 114592, Total correct: 118792
+False positives: 1174, False negatives: 4398, Total incorrect: 5572
+Total Precision: 0.7815
+Total Recall: 0.4885
+Total F1 Score: 0.6012
+Total Accuracy: 0.9552
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.6512
+Average Precision Score: 0.9322
+Average Recall Score: 0.6512
+Average F1 Score: 0.7667
+Average Accuracy Score: 0.9454
+===================================
+Evaluation Time (F1/Recall/Precision): 511.92s time: 511.92 seconds
+Checkpoint saved to model_epoch_2.pt
+Epoch 3/10
+Epoch 3 finished. Total Loss: 595.8366. Time: 6588.68 sec
+Validation Loss per batch: 0.1650, Time: 961.72 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:34<00:00,  2.00batch/s]
+Total 1: 59585, Total 0: 437871
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 4167, True negatives: 115025, Total correct: 119192
+False positives: 741, False negatives: 4431, Total incorrect: 5172
+Total Precision: 0.8490
+Total Recall: 0.4846
+Total F1 Score: 0.6171
+Total Accuracy: 0.9584
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.6602
+Average Precision Score: 0.9469
+Average Recall Score: 0.6602
+Average F1 Score: 0.7780
+Average Accuracy Score: 0.9479
+===================================
+Evaluation Time (F1/Recall/Precision): 514.22s time: 514.22 seconds
+Checkpoint saved to model_epoch_3.pt
+Epoch 4/10
+Epoch 4 finished. Total Loss: 515.7548. Time: 6582.34 sec
+Validation Loss per batch: 0.1609, Time: 977.94 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:31<00:00,  2.01batch/s]
+Total 1: 65138, Total 0: 556682
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 4603, True negatives: 114816, Total correct: 119419
+False positives: 950, False negatives: 3995, Total incorrect: 4945
+Total Precision: 0.8289
+Total Recall: 0.5354
+Total F1 Score: 0.6506
+Total Accuracy: 0.9602
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.6906
+Average Precision Score: 0.9246
+Average Recall Score: 0.6906
+Average F1 Score: 0.7906
+Average Accuracy Score: 0.9499
+===================================
+Evaluation Time (F1/Recall/Precision): 511.67s time: 511.67 seconds
+Checkpoint saved to model_epoch_4.pt
+Epoch 5/10
+Epoch 5 finished. Total Loss: 447.0875. Time: 6575.70 sec
+Validation Loss per batch: 0.1610, Time: 951.61 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:30<00:00,  2.01batch/s]
+Total 1: 70829, Total 0: 675355
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 4740, True negatives: 114815, Total correct: 119555
+False positives: 951, False negatives: 3858, Total incorrect: 4809
+Total Precision: 0.8329
+Total Recall: 0.5513
+Total F1 Score: 0.6634
+Total Accuracy: 0.9613
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.6982
+Average Precision Score: 0.9245
+Average Recall Score: 0.6982
+Average F1 Score: 0.7956
+Average Accuracy Score: 0.9514
+===================================
+Evaluation Time (F1/Recall/Precision): 510.98s time: 510.98 seconds
+Checkpoint saved to model_epoch_5.pt
+Epoch 6/10
+Epoch 6 finished. Total Loss: 393.6406. Time: 6554.42 sec
+Validation Loss per batch: 0.1666, Time: 955.38 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:32<00:00,  2.01batch/s]
+Total 1: 77078, Total 0: 793470
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5087, True negatives: 114604, Total correct: 119691
+False positives: 1162, False negatives: 3511, Total incorrect: 4673
+Total Precision: 0.8141
+Total Recall: 0.5916
+Total F1 Score: 0.6853
+Total Accuracy: 0.9624
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.7178
+Average Precision Score: 0.9121
+Average Recall Score: 0.7178
+Average F1 Score: 0.8034
+Average Accuracy Score: 0.9523
+===================================
+Evaluation Time (F1/Recall/Precision): 512.15s time: 512.15 seconds
+Checkpoint saved to model_epoch_6.pt
+Epoch 7/10
+Epoch 7 finished. Total Loss: 346.9252. Time: 6582.90 sec
+Validation Loss per batch: 0.1754, Time: 946.39 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:30<00:00,  2.02batch/s]
+Total 1: 84159, Total 0: 910753
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5321, True negatives: 114006, Total correct: 119327
+False positives: 1760, False negatives: 3277, Total incorrect: 5037
+Total Precision: 0.7514
+Total Recall: 0.6189
+Total F1 Score: 0.6787
+Total Accuracy: 0.9595
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.7410
+Average Precision Score: 0.8585
+Average Recall Score: 0.7410
+Average F1 Score: 0.7954
+Average Accuracy Score: 0.9481
+===================================
+Evaluation Time (F1/Recall/Precision): 510.32s time: 510.32 seconds
+Checkpoint saved to model_epoch_7.pt
+Epoch 8/10
+Epoch 8 finished. Total Loss: 308.4076. Time: 6540.74 sec
+Validation Loss per batch: 0.1863, Time: 943.98 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:32<00:00,  2.01batch/s]
+Total 1: 91277, Total 0: 1027999
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5342, True negatives: 113990, Total correct: 119332
+False positives: 1776, False negatives: 3256, Total incorrect: 5032
+Total Precision: 0.7505
+Total Recall: 0.6213
+Total F1 Score: 0.6798
+Total Accuracy: 0.9595
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.7475
+Average Precision Score: 0.8384
+Average Recall Score: 0.7475
+Average F1 Score: 0.7903
+Average Accuracy Score: 0.9467
+===================================
+Evaluation Time (F1/Recall/Precision): 512.15s time: 512.15 seconds
+Checkpoint saved to model_epoch_8.pt
+Epoch 9/10
+Epoch 9 finished. Total Loss: 275.4523. Time: 6529.02 sec
+Validation Loss per batch: 0.1780, Time: 934.40 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:30<00:00,  2.01batch/s]
+Total 1: 98128, Total 0: 1145512
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5444, True negatives: 114359, Total correct: 119803
+False positives: 1407, False negatives: 3154, Total incorrect: 4561
+Total Precision: 0.7946
+Total Recall: 0.6332
+Total F1 Score: 0.7048
+Total Accuracy: 0.9633
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.7466
+Average Precision Score: 0.8773
+Average Recall Score: 0.7466
+Average F1 Score: 0.8067
+Average Accuracy Score: 0.9524
+===================================
+Evaluation Time (F1/Recall/Precision): 510.73s time: 510.73 seconds
+Checkpoint saved to model_epoch_9.pt
+Epoch 10/10
+Epoch 10 finished. Total Loss: 242.9840. Time: 6461.34 sec
+Validation Loss per batch: 0.1964, Time: 927.59 seconds
+Evaluating batches: 100%|██████████| 1029/1029 [08:30<00:00,  2.02batch/s]
+Total 1: 105339, Total 0: 1262665
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5528, True negatives: 114083, Total correct: 119611
+False positives: 1683, False negatives: 3070, Total incorrect: 4753
+Total Precision: 0.7666
+Total Recall: 0.6429
+Total F1 Score: 0.6993
+Total Accuracy: 0.9618
+Buggy Cell Ratio: 0.0691
+
+===== Averages Per Book =====
+Average Percent of the Bugs Found Per Book: 0.7486
+Average Precision Score: 0.8529
+Average Recall Score: 0.7486
+Average F1 Score: 0.7974
+Average Accuracy Score: 0.9503
+===================================
+Evaluation Time (F1/Recall/Precision): 510.00s time: 510.00 seconds
+Checkpoint saved to model_epoch_10.pt
+finished

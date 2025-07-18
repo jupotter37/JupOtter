@@ -1,0 +1,99 @@
+Evaluation results for epoch 9 of JupOtter-base
+
+OtterDataset testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 5444, True negatives: 114359, Total correct: 119803
+False positives: 1407, False negatives: 3154, Total incorrect: 4561
+
+===== Cell-aggregated =====
+Precision: 0.7946
+Recall: 0.6332
+F1 Score: 0.7048
+Accuracy: 0.9633
+Cell Ratio: 0.0691
+==================================
+
+===== File-aggregated =====
+Precision Score: 0.8773
+Recall Score: 0.7466
+F1 Score: 0.8067
+Accuracy Score: 0.9524
+===================================
+
+
+CodeParrot GitHub Jupyter dataset (our subset) testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 4769, Total cells: 78313, Total buggy cells: 3797
+True positives: 2964, True negatives: 73443, Total correct: 76407
+False positives: 1073, False negatives: 833, Total incorrect: 1906
+
+===== Cell-aggregated =====
+Precision: 0.7342
+Recall: 0.7806
+F1 Score: 0.7567
+Accuracy: 0.9757
+Buggy Cell Ratio: 0.0485
+===================================
+
+===== File-aggregated =====
+Precision Score: 0.8639
+Recall Score: 0.9187
+F1 Score: 0.8904
+Accuracy Score: 0.9620
+===================================
+
+
+Jupyter Errors dataset testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 9971, Total cells: 297063, Total buggy cells: 17042
+True positives: 3898, True negatives: 276823, Total correct: 280721
+False positives: 3198, False negatives: 13144, Total incorrect: 16342
+
+===== Cell-aggregated =====
+Precision: 0.5493
+Recall: 0.2287
+F1 Score: 0.3230
+Accuracy: 0.9450
+Buggy Cell Ratio: 0.0574
+===================================
+
+===== File-aggregated =====
+Precision Score: 0.8230
+Recall Score: 0.2131
+F1 Score: 0.3386
+Accuracy Score: 0.9050
+===================================
+
+
+OtterDataset testing set results file-level:
+===== Model File Level Evaluation Metrics Totals =====
+True positives: 1350, True negatives: 1931, Total correct: 3281
+False positives: 176, False negatives: 656, Total incorrect: 832
+Precision: 0.8847
+Recall: 0.6730
+F1 Score: 0.7644
+Accuracy: 0.7977
+===================================
+
+
+CodeParrot GitHub Jupyter dataset (our subset) testing set results file-level:
+===== Model File Level Evaluation Metrics Totals =====
+True positives: 838, True negatives: 3138, Total correct: 3976
+False positives: 523, False negatives: 270, Total incorrect: 793
+Precision: 0.6157
+Recall: 0.7563
+F1 Score: 0.6788
+Accuracy: 0.8337
+===================================
+
+
+Jupyter Errors dataset testing set results file-level:
+===== Model File Level Evaluation Metrics Totals =====
+True positives: 3145, True negatives: 559, Total correct: 3704
+False positives: 189, False negatives: 6078, Total incorrect: 6267
+Precision: 0.9433
+Recall: 0.3410
+F1 Score: 0.5009
+Accuracy: 0.3715
+===================================

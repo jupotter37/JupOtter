@@ -1,0 +1,73 @@
+Evaluation results for epoch 10 of JupOtter-small
+
+
+OtterDataset testing set results cell-level:
+===== Model Evaluation Metrics Totals =====
+Total books: 4113, Total cells: 124364, Total buggy cells: 8598
+True positives: 4895, True negatives: 114665, Total correct: 119560
+False positives: 1101, False negatives: 3703, Total incorrect: 4804
+
+===== Cell-aggregated =====
+Precision: 0.8164
+Recall: 0.5693
+F1 Score: 0.6708
+Accuracy: 0.9614
+Buggy Cell Ratio: 0.0691
+===================================
+
+===== File-aggregated =====
+Average Precision Score: 0.9325
+Average Recall Score: 0.6897
+Average F1 Score: 0.7929
+Average Accuracy Score: 0.9519
+===================================
+
+
+CodeParrot GitHub Jupyter dataset (our subset) testing set results cell-level:
+Total 1: 3837, Total 0: 74476
+
+===== Model Evaluation Metrics Totals =====
+Total books: 4769, Total cells: 78313, Total buggy cells: 3797
+True positives: 3006, True negatives: 73685, Total correct: 76691
+False positives: 831, False negatives: 791, Total incorrect: 1622
+
+===== Cell-aggregated =====
+Precision: 0.7834
+Recall: 0.7917
+F1 Score: 0.7875
+Accuracy: 0.9793
+Buggy Cell Ratio: 0.0485
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.9395
+Recall Score: 0.9152
+F1 Score: 0.9272
+Accuracy Score: 0.9731
+===================================
+
+
+Jupyter Errors dataset testing set results cell-level:
+Total 1: 4413, Total 0: 277958
+
+===== Model Evaluation Metrics Totals =====
+Total books: 9313, Total cells: 282371, Total buggy cells: 15960
+True positives: 2986, True negatives: 264984, Total correct: 267970
+False positives: 1427, False negatives: 12974, Total incorrect: 14401
+
+===== Cell-aggregated =====
+Precision: 0.6766
+Recall: 0.1871
+F1 Score: 0.2931
+Accuracy: 0.9490
+Buggy Cell Ratio: 0.0565
+===================================
+
+
+===== File-aggregated =====
+Precision Score: 0.9292
+Recall Score: 0.1672
+F1 Score: 0.2834
+Accuracy Score: 0.9097
+===================================
