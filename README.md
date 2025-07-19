@@ -13,13 +13,13 @@
 - OtterDataset is organized in directories by query used, all queries are included in the OtterDataset folder and were used between December 2024 and January 2025. The final labeled 'OtterDataset.csv' is available in 'dataset\OtterDataset\OtterDataset.csv'. Note that some notebooks retrieved using our queries were filtered out during data processing.
 - Our labeled CodeParrot GitHub Jupyter dataset subset is available in 'dataset\CodeParrot_Subset\CodeParrot_dataset.csv', and our labeled Jupyter Errors dataset is in 'dataset\JupyterErrors_dataset\JupyterError_dataset.csv'.
 - 'errorExamples_Figure6_Figure8' contains notebook files referenced in figures whos repositories have since been removed from GitHub.
-- Also included are the files used to process code which convert directories of notebooks into a labeled dataset of notebooks ready for training and evaluation. These include 'bug_info_proccesing.py', 'code_proccessing.py', and cleanData_csv.py'. These files are used within 'run_model.ipynb', cell 2 to prepare data for tokenization. These files were used to process the directories of files within OtterDataset, first creating an individual CSV datasets for each directory, then combining them all while ensuring duplicates are removed. To create OtterDataset, the function 'create_notebook_train_data()' from the 'clean()' class in 'cleanData_csv.py' was used to create csv files for each directory, then 'moveBuggyCode()' and 'moveCode()' were used from the 'Move_books()' class to combine them and remove duplicates.
+- Also included are the files used to process code which convert directories of notebooks into a labeled dataset of notebooks ready for training and evaluation. These include 'bug_info_proccesing.py', 'code_proccessing.py', and cleanData_csv.py'. These files are used within 'run_model.ipynb', cell 2, to prepare data for tokenization. These files were used to process the directories of files within OtterDataset, first creating an individual CSV datasets for each directory, then combining them all while ensuring duplicates are removed. To create OtterDataset, the function 'create_notebook_train_data()' from the 'clean()' class in 'cleanData_csv.py' was used to create csv files for each directory, then 'moveBuggyCode()' and 'moveCode()' were used from the 'Move_books()' class to combine them and remove duplicates.
 - 'dataset\download_data' contains the python used to download our external datasets.
 
 ### Evaluation results
-- The training and evaluation results for JupOtter-small and JupOtter-base are included in the 'trainin_and_evaluation_results' directory. Validation testing within training epochs was done using the OtterDataset test set.
-- Evaluation results for Flake8 configured for both file-level and cell-level bug detection are also included under 'trainin_and_evaluation_results'.
-- Trained model parameters for the JupOtter-small and JupOtter-base epochs used durring evaluation are included in the 'models' directory.
+- The training and evaluation results for JupOtter-small and JupOtter-base are included in the 'training_and_evaluation_results' directory. Validation testing within training epochs was done using the OtterDataset test set.
+- Evaluation results for Flake8 configured for both file-level and cell-level bug detection are also included under 'training_and_evaluation_results'.
+- Trained model parameters for the JupOtter-small and JupOtter-base epochs used during evaluation are included in the 'models' directory.
 
 
 
