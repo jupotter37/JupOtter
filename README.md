@@ -23,7 +23,7 @@
 
 
 
-This repository is 20.2 GB due to the size of the raw notebook files, labeled datasets, and model parameters included.
+This repository is 20.3 GB due to the size of the raw notebook files, labeled datasets, and model parameters included.
 
 
 
