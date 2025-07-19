@@ -10,7 +10,7 @@ Syntax errors are checked by parsing the code in each cell to ensure errors are 
 (parsing code results in 6% more errors caught that would otherwise be classified as not buggy),
 and runtime errors are checked by looking at the outputs of each cell.
 
-Parsing is done using parse_idv_cells(). Notebooks are parsed at the cell level because syntax is independant of 
+Parsing is done using parse_idv_cells(). Notebooks are parsed at the cell level because syntax is independent of 
 surrounding cells.
 
 Runtime errors are checked using get_runtime_errors().

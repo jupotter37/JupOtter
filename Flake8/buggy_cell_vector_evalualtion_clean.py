@@ -87,7 +87,7 @@ class VectorEval:
         self.total_cells += local_total_cells
 
     '''
-    Used a helper function in file-level evaluation to evaulate model predictions agains the label.
+    Used a helper function in file-level evaluation to evaluate model predictions against the label.
 
     This is for file-level predictions, so if a cell in the label is labeled as buggy the label becomes
     1, and if a cell is predicted to be buggy in the model outputs the prediction becomes 1.
@@ -155,7 +155,7 @@ class VectorEval:
      
 
     '''
-    The following function is called durring training and evaluation to evaluate models. Eval type 1 is for cell 
+    The following function is called during training and evaluation to evaluate models. Eval type 1 is for cell 
     level bug detection, eval type 2 is for file level bug detection.
 
     Evaluates the model over the test set provided by test_loader in batches.

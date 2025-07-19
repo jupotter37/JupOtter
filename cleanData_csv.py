@@ -119,7 +119,7 @@ class Data_Clean():
         self.process_notebooks(list_of_notebooks, writeToFileName, Format)
 
     '''
-    Used to create csv with single book data, this ment to be ran on a single ipynb file, put path of file
+    Used to create csv with single book data, this meant to be ran on a single ipynb file, put path of file
     csv name, then format.
     '''
     def create_single_notebook_data(self, directory, writeToFileName, Format):
@@ -128,7 +128,7 @@ class Data_Clean():
 
 class Data_manage:
     '''
-    Used to count errors that have been idendified in the csv column containing the error types.
+    Used to count errors that have been identified in the csv column containing the error types.
     '''
     def countErrorTypes(self, FileName):
         # this limit is used to avoid crashing with large notebooks
@@ -278,10 +278,10 @@ class Data_manage:
                 file_path = os.path.join(dir, filename)
 
                 a = self.ensureNoDuplicates(file_path)
-                print(f"File: {filename}, Dupluicates: {a}")
+                print(f"File: {filename}, Duplicates: {a}")
                 with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
                     reader = csv.reader(csvfile)  # Use CSV reader to parse rows
-                    count = -1 # to skipp header
+                    count = -1 # to skip header
                     for row in reader:
                         count += 1
                     print(count)
