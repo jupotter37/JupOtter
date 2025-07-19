@@ -46,23 +46,24 @@ Accuracy Score: 0.9620
 
 Jupyter Errors dataset testing set results cell-level:
 ===== Model Evaluation Metrics Totals =====
-Total books: 9971, Total cells: 297063, Total buggy cells: 17042
-True positives: 3898, True negatives: 276823, Total correct: 280721
-False positives: 3198, False negatives: 13144, Total incorrect: 16342
+Total books: 9313, Total cells: 282371, Total buggy cells: 15960
+True positives: 3655, True negatives: 263372, Total correct: 267027
+False positives: 3039, False negatives: 12305, Total incorrect: 15344
 
 ===== Cell-aggregated =====
-Precision: 0.5493
-Recall: 0.2287
-F1 Score: 0.3230
-Accuracy: 0.9450
-Buggy Cell Ratio: 0.0574
+Precision: 0.5460
+Recall: 0.2290
+F1 Score: 0.3227
+Accuracy: 0.9457
+Buggy Cell Ratio: 0.0565
 ===================================
 
+
 ===== File-aggregated =====
-Precision Score: 0.8230
-Recall Score: 0.2131
-F1 Score: 0.3386
-Accuracy Score: 0.9050
+Precision Score: 0.8193
+Recall Score: 0.2176
+F1 Score: 0.3439
+Accuracy Score: 0.9072
 ===================================
 
 
@@ -90,10 +91,10 @@ Accuracy: 0.8337
 
 Jupyter Errors dataset testing set results file-level:
 ===== Model File Level Evaluation Metrics Totals =====
-True positives: 3145, True negatives: 559, Total correct: 3704
-False positives: 189, False negatives: 6078, Total incorrect: 6267
-Precision: 0.9433
-Recall: 0.3410
-F1 Score: 0.5009
-Accuracy: 0.3715
+True positives: 2968, True negatives: 554, Total correct: 3522
+False positives: 185, False negatives: 5606, Total incorrect: 5791
+Precision: 0.9413
+Recall: 0.3462
+F1 Score: 0.5062
+Accuracy: 0.3782
 ===================================

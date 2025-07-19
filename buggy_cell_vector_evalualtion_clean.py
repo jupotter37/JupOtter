@@ -24,6 +24,9 @@ class VectorEval:
         self.total_bugs = 0
         self.total_cells = 0
 
+    '''
+    Used as a helper function in cell-level evaluation to evaluate prediction vectors agains their labels.
+    '''
     def eval_vector(self, result_vector, label_vector):
         # Ensure both are iterables
         if isinstance(result_vector, int):
@@ -83,7 +86,13 @@ class VectorEval:
         self.total_bugs += local_buggy_cells
         self.total_cells += local_total_cells
 
-    #label vector should be the cell level labels for the file, and result_vector should be the model's predictions for the file
+    '''
+    Used a helper function in file-level evaluation to evaulate model predictions agains the label.
+
+    This is for file-level predictions, so if a cell in the label is labeled as buggy the label becomes
+    1, and if a cell is predicted to be buggy in the model outputs the prediction becomes 1.
+    '''
+    
     def eval_vector_file(self, result_vector, label_vector):
         label = 0
 
@@ -112,7 +121,8 @@ class VectorEval:
 
     '''
     This function evaluates a single book (one sample) given its predictions and labels.
-    It will print the logits predictions for each cell in the book.
+    It will print the logits predictions for each cell in the book, and use eval_vector()
+    to evaluate.
     '''
     def eval_single_book(self, test_loader, model, start_token_ids, end_token_ids, device, chunk_size=4, eval_type=1):
         model.eval()
@@ -144,15 +154,16 @@ class VectorEval:
         self.eval_vector(logits_pred, label)
      
 
+    '''
+    The following function is called durring training and evaluation to evaluate models. Eval type 1 is for cell 
+    level bug detection, eval type 2 is for file level bug detection.
 
-    # eval type 1 is for cell level bug detection, eval type 2 is for file level bug detection
+    Evaluates the model over the test set provided by test_loader in batches.
+
+    This will evaluate the model one book at a time, and for each book, it will evaluate the model on all its chunks 
+    predictions concationated together to form a single tensor for the notebook.
+    '''
     def eval_vector_batched(self, test_loader, model, start_token_ids, end_token_ids, device, chunk_size=4, eval_type=1):
-        """
-        Evaluates the model over the test set provided by test_loader in batches.
-
-        This will evaluate the model one book at a time, and for each book, it will evaluate the model on all its chunks 
-        predictions concationated together to form a single tensor for the notebook.
-        """
         model.eval()
 
         loader = tqdm(test_loader,
@@ -186,7 +197,6 @@ class VectorEval:
                         self.eval_vector(logits_pred, label)
   
                     if eval_type == 2:
-           
                         self.eval_vector_file(logits_pred, label)
 
 

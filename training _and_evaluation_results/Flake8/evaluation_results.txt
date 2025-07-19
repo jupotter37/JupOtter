@@ -47,24 +47,24 @@ Accuracy Score: 0.6895
 
 Jupyter Errors dataset testing set results cell-level:
 ===== Model Evaluation Metrics Totals =====
-Total books: 9971, Total cells: 191974, Total buggy cells: 11006
-True positives: 721, True negatives: 177132, Total correct: 177853
-False positives: 3836, False negatives: 10285, Total incorrect: 14121
+Total books: 9313, Total cells: 181607, Total buggy cells: 10395
+True positives: 687, True negatives: 167724, Total correct: 168411
+False positives: 3488, False negatives: 9708, Total incorrect: 13196
 
 ===== Cell-aggregated =====
-Precision: 0.1582
-Recall: 0.0655
-F1 Score: 0.0927
-Accuracy: 0.9264
-Buggy Cell Ratio: 0.0573
+Precision: 0.1646
+Recall: 0.0661
+F1 Score: 0.0943
+Accuracy: 0.9273
+Buggy Cell Ratio: 0.0572
 ===================================
 
 
 ===== File-aggregated =====
-Precision Score: 0.6153
-Recall Score: 0.4380
-F1 Score: 0.5117
-Accuracy Score: 0.6787
+Precision Score: 0.6255
+Recall Score: 0.4306
+F1 Score: 0.5101
+Accuracy Score: 0.6924
 ===================================
 
 
@@ -85,7 +85,7 @@ F1 Score : 0.4693
 
 
 Jupyter Errors dataset testing set results file-level:
-Accuracy : 0.6941
-Precision: 0.9293
-Recall   : 0.7244
-F1 Score : 0.8142
+Accuracy : 0.6893
+Precision: 0.9249
+Recall   : 0.7210
+F1 Score : 0.8103

@@ -4,6 +4,8 @@ import nbformat
 '''
 The following function is used to exrtract only code cells from a notebook.
 This will return the cells as a string in the format [{cell_number n, code source code}].
+
+Not used in OtterDataset
 '''
 def extract_cells_bracketed(notebook_file_path):
         # Load the notebook using nbformat
@@ -37,6 +39,11 @@ def extract_cells_bracketed(notebook_file_path):
         
         return code_cells
 
+'''
+This will extract the code from a notebook, adding markers and removing comments in the cells.
+
+Not used in OtterDataset
+'''
 # used to get the content out of a single notebook organized by cells
 def extract_cells_with_cell_nums(notebook_file_path):
         # Load the notebook using nbformat
@@ -94,6 +101,8 @@ def extract_code_one_file(notebook_file_path):
 This will extract the code and markdown from a notebook and return it as a string seperated
 by <CODE_CELL_1> <END_CODE_CELL_1>, <CODE_CELL_2>, <END_CODE_CELL_2>, etc for code cells, and 
 <MARKDOWN_CELL_1> <END_MARKDOWN_CELL_1>, <MARKDOWN_CELL_2>, <END_MARKDOWN_CELL_2>, etc for markdown cells.
+
+Not used in OtterDataset
 '''
 def extract_code_and_markdown_one_file(notebook_file_path):
         # Load the notebook using nbformat

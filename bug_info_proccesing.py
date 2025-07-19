@@ -24,15 +24,15 @@ def check_if_notebook_is_buggy(notebook_file_path):
     error_locations, error_types, cleaned_error_messages, buggy_cells = [], [], [], []
     isBug = False
 
-    # loop through the code cells
+    # loop through the code cells in notebook
     for cell in notebook_content.cells: 
         if cell.cell_type == 'code':
             code = cell['source']
                               
-            # to find syntax errors 
+            # to find syntax errors that may not be present in cell outputs
             isSyntaxError, syntax_error_message, syntax_error_line, syntax_error_location  = parse_idv_cells(code, cell_count)
 
-            if isSyntaxError == True:
+            if isSyntaxError == True: 
                 isBug = True
                 error_types.append('SyntaxError')
                 cleaned_error_messages.append(syntax_error_message)
