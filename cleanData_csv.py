@@ -9,6 +9,8 @@ import bug_info_proccesing
 class Data_Clean():
     '''
     The following function is used to process a folder of notebooks creating a csv file with annotations about the notebooks.
+
+    Format 2 was used when creating our datasets.
     '''
     def process_notebooks(self, input_notebooks, writeToFileName, Format=2):
         # Open a CSV file to store the results
@@ -65,16 +67,15 @@ class Data_Clean():
                 writer.writeheader()
 
                 # Check if the notebook is buggy
-                
                 is_notebook_buggy, error_locations, error_type, error_message, buggy_cells = bug_info_proccesing.check_if_notebook_is_buggy(notebook_file_path)
-                print(1)
+
                 # Determine the format
                 if format_type == 1:
                     new_notebook = code_proccesing.extract_cells_with_cell_nums(notebook_file_path)
                 elif format_type == 2:
                     new_notebook = code_proccesing.extract_code_one_file(notebook_file_path)
                 elif format_type == 3:
-                    new_notebook = code_proccesing.extract_cells_raw(notebook_file_path)
+                    new_notebook = code_proccesing.extract_code_and_markdown_one_file(notebook_file_path)
                 elif format_type == 4:
                     new_notebook = code_proccesing.extract_cells_bracketed(notebook_file_path)
                 else:
@@ -200,7 +201,7 @@ class Data_manage:
 
     '''
     Returns true if all entries within a given csv are unique based on the name, otherwise false. This is
-    used to prevent data leakage, name is a combination the notebook name, author name, and repository name.
+    used to prevent data leakage, file names are a combination the notebook name, author name, and repository name.
     '''
     def ensureNoDuplicates(self, FileName):
         csv.field_size_limit(10000000)
@@ -213,8 +214,7 @@ class Data_manage:
         return True
     
     '''
-    Returns true if all entries between two csv files are unique, returns true if all entries are unique,
-    otherwise returns false.
+    Returns true if all entries between two csv files are unique, otherwise returns false.
     '''
     def ensure_no_duplicates_between_files(self, file_a, file_b):
         csv.field_size_limit(10000000)
@@ -314,7 +314,7 @@ class Move_books:
         buggyRows = []
 
         csv.field_size_limit(1000000) 
-        
+        # get all buggy rows based on file level label
         with open(MoveFromFile, 'r', encoding='utf-8') as csvfile:
             fromFileReader = csv.reader(csvfile)
             for row in fromFileReader:
@@ -411,7 +411,7 @@ class Move_books:
             print(f"Number of entries in {MoveFromFile}: {len(buggyRows)}")
     
     '''
-    checks if a notebook is already in a csv, ensures no duplicates
+    checks if a notebook is already in a csv, ensures no duplicates.
     '''
     def checkIfContains(self, toFileReader, buggyCodeName):
         for row in toFileReader:

@@ -4,7 +4,7 @@ from datasets import load_dataset
 import nbformat
 
 
-# 1) where to save
+# where to save
 save_folder = r''
 os.makedirs(save_folder, exist_ok=True)
 

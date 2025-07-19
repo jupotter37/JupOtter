@@ -33,7 +33,7 @@ class VectorEval:
             result_vector = [result_vector]
         if isinstance(label_vector, int):
             label_vector = [label_vector]
-        # Evaluates one book (one sample) given its predictions and labels. 
+        
         local_true_positives = 0
         local_false_positives = 0
         local_true_negatives = 0
@@ -161,7 +161,7 @@ class VectorEval:
     Evaluates the model over the test set provided by test_loader in batches.
 
     This will evaluate the model one book at a time, and for each book, it will evaluate the model on all its chunks 
-    predictions concationated together to form a single tensor for the notebook.
+    predictions concatenated together to form a single tensor for the notebook.
     '''
     def eval_vector_batched(self, test_loader, model, start_token_ids, end_token_ids, device, chunk_size=4, eval_type=1):
         model.eval()
@@ -187,16 +187,16 @@ class VectorEval:
                     with autocast(device_type='cuda', dtype=torch.float16): 
                         outputs = model(input_ids=batch_ids, attention_mask=batch_masks, start_token_ids=start_token_ids, end_token_ids=end_token_ids, labels=batch_labels)
                     
-                    # concationate the predictions together to form a single tensor for the notebook
+                    # concatenate the predictions together to form a single tensor for the notebook
                     logits_pred = (torch.cat(outputs["logits"]).squeeze(1) >= 0).long().cpu().tolist()
 
-                    
+                    # concatenate the chunk level labels
                     label = torch.cat(batch_labels).float().tolist()
      
-                    if eval_type == 1 and label and logits_pred is not None:
+                    if eval_type == 1 and label and logits_pred is not None: # cell level eval
                         self.eval_vector(logits_pred, label)
   
-                    if eval_type == 2:
+                    if eval_type == 2: # file level eval
                         self.eval_vector_file(logits_pred, label)
 
 

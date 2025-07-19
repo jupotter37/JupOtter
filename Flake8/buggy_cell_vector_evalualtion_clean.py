@@ -1,5 +1,5 @@
 import torch
-from torch.amp import autocast, GradScaler
+from torch.amp import autocast
 from tqdm.auto import tqdm
 
 class VectorEval:
@@ -24,13 +24,16 @@ class VectorEval:
         self.total_bugs = 0
         self.total_cells = 0
 
+    '''
+    Used as a helper function in cell-level evaluation to evaluate prediction vectors agains their labels.
+    '''
     def eval_vector(self, result_vector, label_vector):
         # Ensure both are iterables
         if isinstance(result_vector, int):
             result_vector = [result_vector]
         if isinstance(label_vector, int):
             label_vector = [label_vector]
-        # Evaluates one book (one sample) given its predictions and labels. 
+        
         local_true_positives = 0
         local_false_positives = 0
         local_true_negatives = 0
@@ -83,7 +86,13 @@ class VectorEval:
         self.total_bugs += local_buggy_cells
         self.total_cells += local_total_cells
 
-    #label vector should be the cell level labels for the file, and result_vector should be the model's predictions for the file
+    '''
+    Used a helper function in file-level evaluation to evaulate model predictions agains the label.
+
+    This is for file-level predictions, so if a cell in the label is labeled as buggy the label becomes
+    1, and if a cell is predicted to be buggy in the model outputs the prediction becomes 1.
+    '''
+    
     def eval_vector_file(self, result_vector, label_vector):
         label = 0
 
@@ -112,7 +121,8 @@ class VectorEval:
 
     '''
     This function evaluates a single book (one sample) given its predictions and labels.
-    It will print the logits predictions for each cell in the book.
+    It will print the logits predictions for each cell in the book, and use eval_vector()
+    to evaluate.
     '''
     def eval_single_book(self, test_loader, model, start_token_ids, end_token_ids, device, chunk_size=4, eval_type=1):
         model.eval()
@@ -120,10 +130,12 @@ class VectorEval:
 
         # Get first batch from DataLoader iterator
         batch = next(iter(test_loader))
-
+ 
         input_ids_batch = batch['input_ids'][0][:chunk_size].to(device)
         attention_mask_batch = batch['attention_mask'][0][:chunk_size].to(device)
-        labels_batch = [lbl.to(device) for lbl in batch['labels'][0][:chunk_size]]
+        batch_labels = [lbl.to(device) for lbl in batch['labels'][0][:chunk_size]]
+
+        label = torch.cat(batch_labels).int().tolist()
 
         with torch.no_grad():
             with autocast(device_type='cuda', dtype=torch.float16):
@@ -132,21 +144,26 @@ class VectorEval:
                     attention_mask=attention_mask_batch,
                     start_token_ids=start_token_ids,
                     end_token_ids=end_token_ids,
-                    labels=labels_batch
+                    labels=None
                 )
 
         logits_pred = (torch.cat(outputs["logits"]).squeeze(1) >= 0).long().cpu().tolist()
-        print("Logits:", logits_pred)
+        print("Label:  ", label)
+        print("Logits: ", logits_pred)
+    
+        self.eval_vector(logits_pred, label)
+     
 
+    '''
+    The following function is called durring training and evaluation to evaluate models. Eval type 1 is for cell 
+    level bug detection, eval type 2 is for file level bug detection.
 
-    # eval type 1 is for cell level bug detection, eval type 2 is for file level bug detection
+    Evaluates the model over the test set provided by test_loader in batches.
+
+    This will evaluate the model one book at a time, and for each book, it will evaluate the model on all its chunks 
+    predictions concatenated together to form a single tensor for the notebook.
+    '''
     def eval_vector_batched(self, test_loader, model, start_token_ids, end_token_ids, device, chunk_size=4, eval_type=1):
-        """
-        Evaluates the model over the test set provided by test_loader in batches.
-
-        This will evaluate the model one book at a time, and for each book, it will evaluate the model on all its chunks 
-        predictions concationated together to form a single tensor for the notebook.
-        """
         model.eval()
 
         loader = tqdm(test_loader,
@@ -170,17 +187,16 @@ class VectorEval:
                     with autocast(device_type='cuda', dtype=torch.float16): 
                         outputs = model(input_ids=batch_ids, attention_mask=batch_masks, start_token_ids=start_token_ids, end_token_ids=end_token_ids, labels=batch_labels)
                     
-                    # concationate the predictions together to form a single tensor for the notebook
+                    # concatenate the predictions together to form a single tensor for the notebook
                     logits_pred = (torch.cat(outputs["logits"]).squeeze(1) >= 0).long().cpu().tolist()
 
-                    
+                    # concatenate the chunk level labels
                     label = torch.cat(batch_labels).float().tolist()
      
-                    if eval_type == 1 and label and logits_pred is not None:
+                    if eval_type == 1 and label and logits_pred is not None: # cell level eval
                         self.eval_vector(logits_pred, label)
   
-                    if eval_type == 2:
-           
+                    if eval_type == 2: # file level eval
                         self.eval_vector_file(logits_pred, label)
 
 
@@ -193,11 +209,10 @@ class VectorEval:
         return true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 1
 
     def calculate_recall(self, true_positives, false_negatives):
-        # If no buggy cells in ground truth, define recall as 1 (i.e., no bugs missed)
         return true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 1
 
     def calculate_f1_score(self, precision, recall):
-        return 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 1
+        return 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
 
     def calculate_accuracy(self, true_positives, true_negatives, false_positives, false_negatives):
         total = true_positives + true_negatives + false_positives + false_negatives
@@ -207,7 +222,6 @@ class VectorEval:
         return self.calculate_precision(self.true_positives, self.false_positives)
        
     def get_total_recall(self):
-        # Corrected to use false negatives instead of true negatives
         return self.calculate_recall(self.true_positives, self.false_negatives)
     
     def get_total_f1(self):

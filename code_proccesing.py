@@ -25,11 +25,10 @@ def extract_cells_bracketed(notebook_file_path):
 
                 # Remove multi-line comments (triple quotes)
                 source = re.sub(r"'''(.*?)'''", '', source, flags=re.DOTALL)
-                source = re.sub(r'"""(.*?)"""', '', source, flags=re.DOTALL)
 
                 # Clean up any trailing or leading whitespaces, including newlines
                 source = source.strip()
-                source = source.replace('"""', '').replace('"""', '').replace('"""', '')
+
 
                 # Store each code cell as a dictionary with cell number and source code
                 code_cells.append({
@@ -59,11 +58,10 @@ def extract_cells_with_cell_nums(notebook_file_path):
                 source = cell['source']
                 
                 # Remove single-line comments
-                source = re.sub(r'#.*', '', source)  # Remove lines that start with #
+                source = re.sub(r'#.*', '', source) 
 
                 # Remove multi-line comments (triple quotes)
-                source = re.sub(r"'''(.*?)'''", '', source, flags=re.DOTALL)  # Remove single-line or multi-line comments in single quotes
-                source = re.sub(r'"""(.*?)"""', '', source, flags=re.DOTALL)  # Remove single-line or multi-line comments in double quotes
+                source = re.sub(r"'''(.*?)'''", '', source, flags=re.DOTALL)  
                 # Remove any leading/trailing whitespace, including newlines
                 source = source.strip()
                 # Append cleaned code to the list

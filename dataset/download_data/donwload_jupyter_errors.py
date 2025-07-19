@@ -29,7 +29,7 @@ for split_name in ["train", "test"]: #get split
     for notebook in ds:
         github_url = notebook["file_link"]
         content = notebook["content"]
-        notebook_rel = notebook["path"] # usde to get file name
+        notebook_rel = notebook["path"] # used to get file name
 
         author, repo = parse_author_repo(github_url)
         raw_fname = os.path.basename(notebook_rel)

@@ -88,7 +88,7 @@ def get_runtime_errors(cell, cell_count):
             if line_match:
                 error_line = line_match.group(1)  # extract the line number
                 error_location_build += ", on line " + error_line
-            # if didnt find line in error message search traaceback
+            # if didnt find line in error message search traceback
             else:
                 found = False
                 traceback_lines = output.get('traceback', [])
