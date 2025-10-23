@@ -7,7 +7,11 @@
 
 
 ### How to run our Flake8 configurations:
-- 'Flake8' directory contains the code used for Flake8 file-level and cell-level evaluation. These are set up for testing, the file-level and cell-level testing files assume tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter and Flake8 were tested on the exact same data.
+- 'Flake8' directory contains the code used for Flake8 file-level and cell-level evaluation. These are set up for testing, the file-level and cell-level testing files assume tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter, gpt-4o-mini, and Flake8 were tested on the exact same data.
+
+### How to run our GPT-4o-mini configuration:
+- 'gpt-4o-mini' directory contains code used to evaluate GPT-4o-minis ability to detect bugs at the file level. It assumes tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter, gpt-4o-mini, and Flake8 were tested on the exact same data.
+
 
 ### Datasets:
 - OtterDataset is organized in directories by query used, all queries are included in the OtterDataset folder and were used between December 2024 and January 2025. The final labeled 'OtterDataset.csv' is available in 'dataset\OtterDataset\OtterDataset.csv'. Note that some notebooks retrieved using our queries were filtered out during data processing.
