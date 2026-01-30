@@ -9,8 +9,8 @@
 ### How to run our Flake8 configurations:
 - 'Flake8' directory contains the code used for Flake8 file-level and cell-level evaluation. These are set up for testing, the file-level and cell-level testing files assume tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter, gpt-4o-mini, and Flake8 were tested on the exact same data.
 
-### How to run our GPT-4o-mini configuration:
-- 'gpt-4o-mini' directory contains code used to evaluate GPT-4o-minis ability to detect bugs at the file level. It assumes tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter, gpt-4o-mini, and Flake8 were tested on the exact same data.
+### How to run our GPT-4o-mini and Gemini-3-Flash configuration:
+- 'gpt-4o-mini' directory contains code used to evaluate GPT-4o-minis ability to detect bugs at the file level and cell level. It assumes tokenized data from 'run_model.ipynb'. This was done to ensure JupOtter, and baselines were tested on the exact same data. 'Gemini-3-Flash' directory contains content to test Gemini-3-Flash.
 
 
 ### Datasets:
